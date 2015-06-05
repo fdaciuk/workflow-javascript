@@ -1,32 +1,16 @@
 ;(function( window, document, undefined ) {
 
-  "use strict";
+  'use strict';
 
-  var modelExample = (function() {
+  function modelExample() {
 
     var $private = {};
     var $public = {};
 
     /**
-     * Private Variables
+     * Private Properties
      */
     $private.privateVar = 'private var';
-
-    // -----------------------------------
-
-    /**
-     * Public Variables
-     */
-    $public.publicVar = 'public var';
-
-    // -----------------------------------
-
-    /**
-     * Private Methods
-     */
-    $private.privateMethod = function() {
-      return 'Private method';
-    };
 
     // -----------------------------------
 
@@ -39,11 +23,21 @@
 
     // -----------------------------------
 
+    /**
+     * Private Methods
+     */
+    $private.privateMethod = function() {
+      return 'Private method';
+    };
+
+    // -----------------------------------
+
     return $public;
 
-  })();
+  }
 
   // Global
-  window.modelExample = modelExample;
+  window.MyGlobalObject = window.MyGlobalObject || {};
+  window.MyGlobalObject.modelExample = modelExample;
 
 })( window, document );
