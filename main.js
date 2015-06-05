@@ -1,6 +1,6 @@
 ;(function( window, document, undefined ) {
 
-  "use strict";
+  'use strict';
 
   var app = (function() {
 
@@ -8,25 +8,9 @@
     var $public = {};
 
     /**
-     * Private Variables
+     * Private Properties
      */
     $private.privateVar = 'private var';
-
-    // -----------------------------------
-
-    /**
-     * Public Variables
-     */
-    $public.publicVar = 'public var';
-
-    // -----------------------------------
-
-    /**
-     * Private Methods
-     */
-    $private.privateMethod = function() {
-      return 'Private method';
-    };
 
     // -----------------------------------
 
@@ -39,11 +23,21 @@
 
     // -----------------------------------
 
+    /**
+     * Private Methods
+     */
+    $private.privateMethod = function() {
+      return 'Private method';
+    };
+
+    // -----------------------------------
+
     return $public;
 
   })();
 
   // Global
-  window.app = app;
+  window.MyGlobalObject = window.MyGlobalObject || {};
+  window.MyGlobalObject.app = app;
 
 })( window, document );
