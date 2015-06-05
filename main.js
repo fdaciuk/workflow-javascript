@@ -2,7 +2,7 @@
 
   'use strict';
 
-  var app = (function() {
+  function app() {
 
     var $private = {};
     var $public = {};
@@ -34,10 +34,10 @@
 
     return $public;
 
-  })();
+  }
 
   // Global
   window.MyGlobalObject = window.MyGlobalObject || {};
-  window.MyGlobalObject.app = app;
+  window.MyGlobalObject.app = app();
 
 })( window, document );
