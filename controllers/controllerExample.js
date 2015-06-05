@@ -1,32 +1,16 @@
 ;(function( window, document, undefined ) {
 
-  "use strict";
+  'use strict';
 
-  var controllerExample = (function() {
+  function controllerExample() {
 
     var $private = {};
     var $public = {};
 
     /**
-     * Private Variables
+     * Private Properties
      */
     $private.privateVar = 'private var';
-
-    // -----------------------------------
-
-    /**
-     * Public Variables
-     */
-    $public.publicVar = 'public var';
-
-    // -----------------------------------
-
-    /**
-     * Private Methods
-     */
-    $private.privateMethod = function() {
-      return 'Private method';
-    };
 
     // -----------------------------------
 
@@ -39,11 +23,21 @@
 
     // -----------------------------------
 
+    /**
+     * Private Methods
+     */
+    $private.privateMethod = function() {
+      return 'Private method';
+    };
+
+    // -----------------------------------
+
     return $public;
 
-  })();
+  }
 
   // Global
-  window.controllerExample = controllerExample;
+  window.MyGlobalObject = window.MyGlobalObject || {};
+  window.MyGlobalObject.controllerExample = controllerExample();
 
 })( window, document );
